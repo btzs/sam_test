@@ -26,7 +26,6 @@ pipeline {
           unstash 'aws-sam'
           sh 'ls'
           sh 'pwd'
-          sh 'cat template.yml'
           sh 'cat .aws-sam/build/template.yaml'
           sh 'venv/bin/sam deploy --stack-name $STACK_NAME -t .aws-sam/build/template.yaml --s3-bucket $S3_BUCKET --capabilities CAPABILITY_IAM'
           dir ('hello-world') {
